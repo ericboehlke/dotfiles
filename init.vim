@@ -1,7 +1,7 @@
 set nocompatible
 
 "syntax enable
-filetype plugin on
+filetype plugin indent on
 
 " Hybrid line numbers
 set number relativenumber
@@ -29,6 +29,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'sbdchd/neoformat'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
