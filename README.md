@@ -30,6 +30,11 @@ I chose to use kitty.
 I installed kitty using the [Binary Install](https://sw.kovidgoyal.net/kitty/binary/) method.
 Then I ran the Desktop integration on Linux commands to get it to show up in my application menus.
 
+Themes:
+```
+kitten themes
+```
+
 
 ### LazyVim
 
