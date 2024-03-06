@@ -1,5 +1,13 @@
 # My Dotfiles
 
+## Place Dotfiles
+
+```
+ln -s /home/eric/code/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s /home/eric/code/dotfiles/nvim ~/.config/nvim
+ln -s /home/eric/code/dotfiles/kitty ~/.config/kitty
+```
+
 ## Neovim
 
 ### Installing Neovim
@@ -19,7 +27,7 @@ git checkout stable
 sudo apt-get install ninja-build gettext cmake unzip curl
 make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin/neovim"
 sudo make install
-export PATH="$HOME/.local/bin/neovim/bin"
+export PATH="$PATH:$HOME/.local/bin/neovim/bin"
 ```
 
 ### Installing Kitty
@@ -50,13 +58,21 @@ For Mason
 sudo apt install python3-venv
 ```
 
-Install `ripgrep` and `fd`
+Install `ripgrep`, `fd`, and `xclip`
 
 ```
-sudo apt install ripgrep fd-find
+sudo apt install ripgrep fd-find xclip
 ```
 
 ```
 :checkhealth telescope
+```
+
+### LazyGit
+```
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
 ```
 
