@@ -10,10 +10,12 @@ return {
 				-- Conform will run multiple formatters sequentially
 				python = { "black" },
 			},
+			-- Use this to debug issues.
+			-- log_level = vim.log.levels.DEBUG,
 			format_on_save = {
 				-- These options will be passed to conform.format()
 				async = false,
-				timeout_ms = 500,
+				timeout_ms = 1000,
 				lsp_fallback = true,
 			},
 			formatters = {
