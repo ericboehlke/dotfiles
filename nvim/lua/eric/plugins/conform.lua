@@ -9,6 +9,7 @@ return {
 				lua = { "stylua" },
 				-- Conform will run multiple formatters sequentially
 				python = { "black" },
+				json = { "jq" },
 			},
 			-- Use this to debug issues.
 			-- log_level = vim.log.levels.DEBUG,

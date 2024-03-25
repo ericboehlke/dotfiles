@@ -44,10 +44,12 @@ return {
 			ensure_installed = {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
-				"black", -- python formatter
+				-- pin version of black
+				{ "black", version = "24.2.0" }, -- python formatter
 				"pylint", -- python linter
 				-- "eslint_d", -- js linter
 				"clangd", -- cpp
+				"jq", -- json linter
 			},
 		})
 	end,

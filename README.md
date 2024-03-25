@@ -76,3 +76,8 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 ```
 
+### Install NPM and NodeJS
+
+Install these for javascript development tools.
+
+Use the second method that uses NodeSource in the article [here](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04).
