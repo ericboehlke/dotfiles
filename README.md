@@ -30,6 +30,12 @@ sudo make install
 export PATH="$PATH:$HOME/.local/bin/neovim/bin"
 ```
 
+To update neovim
+```
+git fetch --tags --force
+git checkout stable
+```
+
 ### Installing Kitty
 
 Lazy requires a terminal with true colors and undercurl.
@@ -37,6 +43,10 @@ I chose to use kitty.
 
 I installed kitty using the [Binary Install](https://sw.kovidgoyal.net/kitty/binary/) method.
 Then I ran the Desktop integration on Linux commands to get it to show up in my application menus.
+The same command used to install can be used to update.
+```
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
 
 Themes:
 ```
