@@ -7,6 +7,7 @@ ln -s /home/eric/code/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s /home/eric/code/dotfiles/nvim ~/.config/nvim
 ln -s /home/eric/code/dotfiles/kitty ~/.config/kitty
 ln -s /home/eric/code/dotfiles/lazygit ~/.config/lazygit
+ln -s /home/eric/code/dotfiles/bat ~/.config/bat
 echo -e "[include]\n    path = /home/eric/code/dotfiles/eric.gitconfig" >> ~/.gitconfig
 ```
 
@@ -94,6 +95,14 @@ mv lazygit ~/.local/bin/lazygit
 DELTA_VERSION=$(curl -s "https://api.github.com/repos/dandavison/delta/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
 curl -Lo delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
 tar xf delta.tar.gz --strip-components=1 -C ~/.local/bin delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu/delta
+```
+
+### Bat (to configure Delta syntax-theme)
+```
+BAT_VERSION=$(curl -s "https://api.github.com/repos/sharkdp/bat/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo bat_${BAT_VERSION}_amd64.deb "https://github.com/sharkdp/bat/releases/download/v${BAT_VERSION}/bat_${BAT_VERSION}_amd64.deb"
+sudo dpkg -i bat_${BAT_VERSION}_amd64.deb
+bat cache --build
 ```
 
 ### Install NPM and NodeJS
