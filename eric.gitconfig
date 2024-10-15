@@ -1,0 +1,68 @@
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+
+[core]
+    editor = nvim  # or code --wait
+    pager = delta
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[interactive]
+    diffFilter = delta --color-only
+
+[alias]
+    lol = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    # "git fza" shows a list of modified/new files in an fzf window, and you can select each file with tab plus arrow keys. When you hit enter, those files are fed into "git add". Needs fzf: https://github.com/junegunn/fzf
+    fza = "!git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 git add"
+    # "git gone" removes local branches that don't exist on the remote.
+    gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
+    # "git root" prints out the root of the repo. You can alias it to "cd $(git root)", and zip back to the repo root from a deep directory structure. This one is less useful now for me since I started using zoxide to jump around.
+    root = rev-parse --show-toplevel
+
+[delta]
+    features = eric-boehlke
+    navigate = true
+
+[delta "eric-boehlke"]
+    # author: https://github.com/ericboehlke
+    # Based on woolly-mammoth: https://github.com/Kr1ss-XD.
+    commit-decoration-style = 130 box
+    dark = true
+    file-decoration-style = "#606018" overline
+    file-added-label = [●]
+    file-copied-label = [C]
+    file-modified-label = [+]
+    file-removed-label = [⛌]
+    file-renamed-label = [→]
+    file-style = 232 bold 184
+    hunk-header-style = syntax bold italic 237
+    line-numbers = true
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    line-numbers-minus-style = red bold
+    line-numbers-plus-style = green bold
+    line-numbers-right-format = " {np:>1}┊"
+    line-numbers-right-style = green
+    line-numbers-zero-style = "#545474" italic
+    minus-emph-style = normal "#7E2827"
+    minus-style = normal "#5e0000"
+    plus-emph-style = syntax bold "#007e5e"
+    plus-style = syntax "#003500"
+    syntax-theme = TwoDark
+    whitespace-error-style = "#80002a" reverse
+    zero-style = syntax
+    blame-format = "{author:<18} ({commit:>7}) ┊{timestamp:^16}┊ "

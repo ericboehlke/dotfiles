@@ -6,6 +6,8 @@
 ln -s /home/eric/code/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s /home/eric/code/dotfiles/nvim ~/.config/nvim
 ln -s /home/eric/code/dotfiles/kitty ~/.config/kitty
+ln -s /home/eric/code/dotfiles/lazygit ~/.config/lazygit
+echo -e "[include]\n    path = /home/eric/code/dotfiles/eric.gitconfig" >> ~/.gitconfig
 ```
 
 ## Neovim
@@ -83,7 +85,15 @@ sudo apt install ripgrep fd-find xclip
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
+# sudo install lazygit /usr/local/bin
+mv lazygit ~/.local/bin/lazygit
+```
+
+### Delta
+```
+DELTA_VERSION=$(curl -s "https://api.github.com/repos/dandavison/delta/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
+curl -Lo delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+tar xf delta.tar.gz --strip-components=1 -C ~/.local/bin delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu/delta
 ```
 
 ### Install NPM and NodeJS
