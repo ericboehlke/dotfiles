@@ -20,7 +20,7 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "black" },
+			python = { "ruff_format" },
 			json = { "jq" },
 		},
 		-- Set default options
@@ -31,8 +31,11 @@ return {
 		format_on_save = { timeout_ms = 500 },
 		-- Customize formatters
 		formatters = {
-			black = {
+			ruff = {
 				prepend_args = { "--line-length", "100" },
+			},
+			jq = {
+				prepend_args = { "--indent", "4" },
 			},
 		},
 	},

@@ -8,12 +8,6 @@
     editor = nvim  # or code --wait
     pager = delta
 
-[gpg]
-	format = ssh
-
-[commit]
-	gpgsign = false
-
 [merge]
     conflictstyle = diff3
 

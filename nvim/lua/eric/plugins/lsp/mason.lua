@@ -30,6 +30,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"jedi_language_server",
+				"ruff",
 				"clangd", -- cpp
 				"emmet_ls",
 				"html",
@@ -43,6 +44,7 @@ return {
 			ensure_installed = {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
+				"ruff", -- python formatter
 				-- pin version of black
 				{ "black", version = "24.2.0" }, -- python formatter
 				"pylint", -- python linter

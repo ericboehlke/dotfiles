@@ -71,9 +71,19 @@ return {
 		end
 
 		-- configure python server
-		lspconfig["jedi_language_server"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
+		-- lspconfig["jedi_language_server"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
+		-- configure ruff server
+		lspconfig["ruff"].setup({
+			init_options = {
+				settings = {
+					lineLength = 100,
+					organizeImports = false,
+				},
+			},
 		})
 
 		-- configure python server
