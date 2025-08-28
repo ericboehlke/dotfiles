@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+keymap.set("n", " ", "<Nop>", { desc = "Ignore space", silent = true })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
