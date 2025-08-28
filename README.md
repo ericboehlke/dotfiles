@@ -6,6 +6,7 @@
 ln -s /home/eric/code/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s /home/eric/code/dotfiles/nvim ~/.config/nvim
 ln -s /home/eric/code/dotfiles/kitty ~/.config/kitty
+ln -s /home/eric/code/dotfiles/ghostty ~/.config/ghostty
 ln -s /home/eric/code/dotfiles/lazygit ~/.config/lazygit
 ln -s /home/eric/code/dotfiles/bat ~/.config/bat
 echo -e "[include]\n    path = /home/eric/code/dotfiles/eric.gitconfig" >> ~/.gitconfig
@@ -42,7 +43,16 @@ make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.l
 sudo make install
 ```
 
-### Installing Kitty
+### Installing Ghostty
+
+Lazy requires a terminal with true colors and undercurl.
+I am now using Ghostty.
+
+Instructions for installation are [here](https://ghostty.org/docs/install/binary#debian).
+Just download the lastest .deb from this [community repository](https://github.com/clayrisser/debian-ghostty/tags) and install with `apt`.
+
+
+### Installing Kitty (Old)
 
 Lazy requires a terminal with true colors and undercurl.
 I chose to use kitty.
