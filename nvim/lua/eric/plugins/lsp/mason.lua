@@ -51,6 +51,7 @@ return {
 				-- "eslint_d", -- js linter
 				"clangd", -- cpp
 				"jq", -- json linter
+				"yq", -- yaml, toml, and xml linter
 			},
 		})
 	end,

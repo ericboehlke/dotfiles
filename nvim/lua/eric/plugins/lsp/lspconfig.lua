@@ -81,15 +81,25 @@ return {
 			init_options = {
 				settings = {
 					lineLength = 100,
-					organizeImports = false,
+					organizeImports = true,
 				},
 			},
 		})
 
-		-- configure python server
+		-- configure clangd server
 		lspconfig["clangd"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			cmd = {
+				"clangd",
+				"--compile-commands-dir=./build",
+				"--query-driver=/usr/bin/c++",
+				-- "--log=verbose",
+				"--header-insertion=never",
+				"--header-insertion-decorators=0",
+			},
+			filetypes = { "c", "cpp", "objc", "objcpp" },
+			root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
 		})
 
 		-- configure html server
