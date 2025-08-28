@@ -37,6 +37,9 @@ To update neovim
 ```
 git fetch --tags --force
 git checkout stable
+rm -rf build .deps
+make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin/neovim"
+sudo make install
 ```
 
 ### Installing Kitty
