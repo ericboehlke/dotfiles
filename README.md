@@ -51,6 +51,11 @@ I am now using Ghostty.
 Instructions for installation are [here](https://ghostty.org/docs/install/binary#debian).
 Just download the lastest .deb from this [community repository](https://github.com/clayrisser/debian-ghostty/tags) and install with `apt`.
 
+To get the newer versions I build from source.
+Install the correct [zig version](https://ziglang.org/download/)
+```
+sudo ~/zig/zig-x86_64-linux-0.14.1/zig build -p /usr -Doptimize=ReleaseFast -fno-sys=gtk4-layer-shell
+```
 
 ### Installing Kitty (Old)
 
