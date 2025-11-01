@@ -16,6 +16,8 @@ echo -e "[include]\n    path = /home/eric/code/dotfiles/eric.gitconfig" >> ~/.gi
 
 ### Installing Neovim
 
+TODO: install neovim in /usr 
+
 Because I am using lazy, I need to install Neovim 0.8.0+.
 I installed the latest stable from source.
 I placed the repository in `$HOME/src/neovim` and installed neovim in `$HOME/bin/`.
