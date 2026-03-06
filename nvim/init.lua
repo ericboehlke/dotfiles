@@ -208,6 +208,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- TODO: Here is where I stopped
 --
+--vim.opt.foldmethod = "expr"
+--vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
