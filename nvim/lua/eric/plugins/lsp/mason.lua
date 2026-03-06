@@ -47,6 +47,7 @@ return {
 				"ruff", -- python formatter
 				-- pin version of black
 				{ "black", version = "24.2.0" }, -- python formatter
+				"mypy",
 				"pylint", -- python linter
 				-- "eslint_d", -- js linter
 				"clangd", -- cpp

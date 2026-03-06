@@ -3,12 +3,12 @@
 ## Place Dotfiles
 
 ```
-ln -s /home/eric/code/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s /home/eric/code/dotfiles/nvim ~/.config/nvim
-ln -s /home/eric/code/dotfiles/kitty ~/.config/kitty
-ln -s /home/eric/code/dotfiles/lazygit ~/.config/lazygit
-ln -s /home/eric/code/dotfiles/bat ~/.config/bat
-echo -e "[include]\n    path = /home/eric/code/dotfiles/eric.gitconfig" >> ~/.gitconfig
+ln -s $HOME/code/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s $HOME/code/dotfiles/nvim ~/.config/nvim
+ln -s $HOME/code/dotfiles/kitty ~/.config/kitty
+ln -s $HOME/code/dotfiles/lazygit ~/.config/lazygit
+ln -s $HOME/code/dotfiles/bat ~/.config/bat
+echo -e "[include]\n    path = $HOME/code/dotfiles/eric.gitconfig" >> ~/.gitconfig
 ```
 
 ## Neovim
@@ -30,7 +30,7 @@ git checkout stable
 sudo apt-get install ninja-build gettext cmake unzip curl
 make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin/neovim"
 sudo make install
-echo "export PATH=\"\$PATH:\$HOME/.local/bin/neovim/bin\"" >> .bashrc
+echo "export PATH=\"\$PATH:\$HOME/.local/bin/neovim/bin\"" >> ~/.bashrc
 ```
 
 To update neovim
@@ -91,7 +91,7 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 # sudo install lazygit /usr/local/bin
 mv lazygit ~/.local/bin/lazygit
-echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> .bashrc
+echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.bashrc
 ```
 
 ### Delta
