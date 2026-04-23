@@ -1,2 +1,7 @@
 # This is the configuration file for Ghostty.
 font-size = 12
+
+# Background transparency (1 = opaque, 0 = fully transparent).
+# Requires a compositor on Linux (e.g. Picom, Mutter, KWin) for the desktop to show through.
+background-opacity = 0.92
+# custom-shader = mirror.glsl

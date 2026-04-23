@@ -3,7 +3,6 @@ customCommands:
     command: "mkpr"
     context: "global"
     loadingText: "Creating pull request on BitBucket"
-
 gui:
   nerdFontsVersion: "3"
   spinner:
@@ -38,11 +37,10 @@ gui:
       - '⠈'
       - '⠈'
     rate: 80
-
 git:
-  paging:
-    colorArg: always
-    # pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-
+  pagers:
+    - colorArg: always
+      # pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 os:
   editPreset: 'nvim'
+  # shellFunctionsFile: ~/.my_aliases.sh
