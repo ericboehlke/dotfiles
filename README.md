@@ -33,7 +33,7 @@ git checkout stable
 sudo apt-get install ninja-build gettext cmake unzip curl
 make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin/neovim"
 sudo make install
-echo "export PATH=\"\$PATH:\$HOME/.local/bin/neovim/bin\"" >> .bashrc
+echo "export PATH=\"\$PATH:\$HOME/.local/bin/neovim/bin\"" >> ~/.bashrc
 ```
 
 To update neovim
@@ -108,7 +108,7 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 # sudo install lazygit /usr/local/bin
 mv lazygit ~/.local/bin/lazygit
-echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> .bashrc
+echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.bashrc
 ```
 
 ### Delta
