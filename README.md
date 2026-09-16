@@ -24,6 +24,10 @@ I placed the repository in `$HOME/src/neovim` and installed neovim in `$HOME/bin
 OR
 I placed the repository in `$HOME/code/neovim` and installed neovim in `$HOME/.local/bin/neovim/`.
 
+```
+cargo install tree-sitter-cli
+```
+
 [Build Instructions](https://github.com/neovim/neovim/blob/master/BUILD.md)
 
 ```
@@ -31,8 +35,8 @@ git clone https://github.com/neovim/neovim
 cd neovim
 git checkout stable
 sudo apt-get install ninja-build gettext cmake unzip curl
-make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin/neovim"
-sudo make install
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux-<arch>.deb
 echo "export PATH=\"\$PATH:\$HOME/.local/bin/neovim/bin\"" >> ~/.bashrc
 ```
 
@@ -41,8 +45,8 @@ To update neovim
 git fetch --tags --force
 git checkout stable
 rm -rf build .deps
-make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin/neovim"
-sudo make install
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux-<arch>.deb
 ```
 
 ### Installing Ghostty
