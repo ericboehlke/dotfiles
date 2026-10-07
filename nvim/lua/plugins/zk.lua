@@ -28,4 +28,7 @@ return {
       multi_select_strategy = "AND",
     }
   },
+  config = function(_, opts)
+    require("zk").setup(opts)
+  end,
 }
